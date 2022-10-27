@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+  </head>
+  <body ng-app="myApp">
+    <section>
+      <div class="container">
+        <header>
+          <a href="#" class="logo">Logo</a>
+          <ul>
+            <li>
+              <a href="#/!" class="active">Home</a>
+            </li>
+            <li>
+              <a href="#!about">About</a>
+            </li>
+            <li>
+              <a href="#!team">Team</a>
+            </li>
+            <li>
+              <a href="#!contact">Contact</a>
+            </li>
+          </ul>
+        </header>
+
+        <div ng-view></div>
+
+        <div class="imgBx">
+          <img src="character.png" />
+        </div>
+        <ul class="sci">
+          <li>
+            <a href="#"><img src="" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="" alt="" /></a>
+          </li>
+          <li>
+            <a href="#"><img src="" alt="" /></a>
+          </li>
+        </ul>
+        <p class="copyRightText">adfasdfasdf</p>
+      </div>
+    </section>
+
+    <script>
+      var app = angular.module("myApp", ["ngRoute"]);
+      app.config([
+        "$routeProvider",
+        function ($routeProvider) {
+          $routeProvider
+            .when("/", { templateUrl: "home.html" })
+            .when("/about", { templateUrl: "about.html" })
+            .when("/team", { templateUrl: "test.html" })
+            .when("/contact", { templateUrl: "contact.html" });
+        },
+      ]);
+    </script>
+  </body>
+</html>
